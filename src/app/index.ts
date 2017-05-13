@@ -9,8 +9,7 @@ import { FilterByPipe } from './pipes/filter-by.pipe';
         NumeralPipe,
         OrderByPipe,
         FilterByPipe
-    ],
-    declarations: [NumeralPipe, OrderByPipe, FilterByPipe]
+    ]
 })
 export class AngularPipesModule {}
 
