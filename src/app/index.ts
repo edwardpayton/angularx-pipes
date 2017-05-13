@@ -3,6 +3,10 @@ import {NgModule} from '@angular/core';
 import { NumeralPipe } from './pipes/numeral.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { FilterByPipe } from './pipes/filter-by.pipe';
+import {
+    FirstUppercasePipe,
+    CapitalisePipe
+} from './pipes/text-transform.pipe';
 
 @NgModule({
     exports: [
