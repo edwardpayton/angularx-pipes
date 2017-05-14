@@ -21,7 +21,6 @@ describe('OrderByPipe', () => {
   });
 
   it('should return users in alphabetical order by first name', () => {
-    console.log('al', pipe.transform(users,'+first'))
     expect(pipe.transform(users,'+first')).toEqual([ users[2],users[3],users[0],users[1]]);
   })
 

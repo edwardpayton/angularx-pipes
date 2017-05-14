@@ -1,7 +1,10 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({name: 'first-uppercase'})
+@Pipe({
+  name: 'first-uppercase'
+})
 export class FirstUppercasePipe implements PipeTransform {
+
   transform(string: string, eachWord: boolean = false): string {
     if(!string) return;
 
@@ -24,8 +27,8 @@ export class FirstUppercasePipe implements PipeTransform {
   name: 'capitalise'
 })
 export class CapitalisePipe implements PipeTransform {
+
   transform(string: string): string {
-    
     if(!string) return;
 
     return string.toUpperCase();
