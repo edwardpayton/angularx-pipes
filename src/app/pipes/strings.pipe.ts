@@ -1,12 +1,14 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
+import { isUndefined, isNotString } from './utilities/utilities';
+
 @Pipe({
     name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
 
   transform(string: string, length?: any, preserve: boolean = false, suffix: string = '...'): string {
-    if(typeof(length) === 'undefined' || length >= string.length) return string;
+    if(isUndefined(length) || length >= string.length) return string;
 
     // decide if the result should return whole words or break mid-word
     let resultLength = preserve 
@@ -25,7 +27,7 @@ export class TruncatePipe implements PipeTransform {
 export class TrimCharacterPipe implements PipeTransform {
 
   transform(string: string, char: string = ' '): string {
-    if(!string) return;
+    if(!string || isNotString(string)) return;
 
     let trimChar = (haystack, needle) => {
       let position = 0;
@@ -47,7 +49,7 @@ export class TrimCharacterPipe implements PipeTransform {
 export class SplitPipe implements PipeTransform {
 
   transform(string: string, limit?: number, separator: string = ' '): Array<string> {
-    if(!string) return;
+    if(!string || isNotString(string)) return;
 
     let result = string.split(separator, limit);
 
@@ -61,7 +63,7 @@ export class SplitPipe implements PipeTransform {
 export class StripTagsPipe implements PipeTransform {
   
   transform(string: string): string {
-    if (!string) return;
+    if(!string) return;
     
     return string.replace(/<\S[^><]*>/g, '');
   }
@@ -74,7 +76,7 @@ export class SlugifyPipe implements PipeTransform {
 
   transform(string: string): string {
 
-    if (!string) return;
+    if (!string || isNotString(string)) return;
     
     return string
             .toLowerCase()

@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+import { isUndefined } from './utilities/utilities';
+
 @Pipe({
   name: 'filterBy', pure: false
 })
 export class FilterByPipe implements PipeTransform {
 
   transform(items: any[], field:string, value:string = '') { 
-      if(items === undefined) return null;
+      if(isUndefined(items)) return null;
       if(!value) return items;
       
       var filterBy = value.toLowerCase();

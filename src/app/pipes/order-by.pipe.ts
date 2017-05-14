@@ -1,5 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+import { isNull, isUndefined } from './utilities/utilities';
+
 @Pipe({
   name: 'orderBy', pure: false
 })
@@ -9,8 +11,8 @@ export class OrderByPipe implements PipeTransform {
 
 	static _orderByComparator(a:any, b:any):number {
 
-    if(a === null || typeof a === 'undefined') a = 0;
-    if(b === null || typeof b === 'undefined') b = 0;
+    if(isNull(a) || isUndefined(a)) a = 0;
+    if(isNull(b) || isUndefined(b)) b = 0;
 
 		if((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
 			//Isn't a number so lowercase the string to properly compare
@@ -56,7 +58,7 @@ export class OrderByPipe implements PipeTransform {
 
           let propertySplit = property.split('.');
 
-          if(typeof aValue === 'undefined' && typeof bValue === 'undefined' && propertySplit.length > 1) {
+          if(isUndefined(aValue) && isUndefined(bValue) && propertySplit.length > 1) {
             aValue = a;
             bValue = b;
             for(let j = 0; j < propertySplit.length; j++) {
@@ -84,7 +86,7 @@ export class OrderByPipe implements PipeTransform {
 
           let propertySplit = property.split('.');
 
-          if(typeof aValue === 'undefined' && typeof bValue === 'undefined' && propertySplit.length > 1) {
+          if(isUndefined(aValue) && isUndefined(bValue) && propertySplit.length > 1) {
             aValue = a;
             bValue = b;
             for(let j = 0; j < propertySplit.length; j++) {
