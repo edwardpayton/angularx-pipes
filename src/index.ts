@@ -39,10 +39,10 @@ export * from './pipes/text-transform.pipe';
     CapitalisePipe
   ]
 })
-export class SampleModule {
+export class AngularxPipes {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
+      ngModule: AngularxPipes,
       providers: []
     };
   }

@@ -1,4 +1,11 @@
-# angularx-pipes
+# AngularX Pipes
+
+A collection of useful, reusable Angular pipes
+
+For Angular 2 and above
+
+https://www.npmjs.com/package/angularx-pipes
+https://github.com/edwardpayton/angularx-pipes
 
 ## Installation
 
@@ -25,7 +32,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'angularx-pipes';
+import { AngularxPipes } from 'angularx-pipes';
 
 @NgModule({
   declarations: [
@@ -33,9 +40,7 @@ import { SampleModule } from 'angularx-pipes';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    AngularxPipes
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,28 +48,14 @@ import { SampleModule } from 'angularx-pipes';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use its pipes in your Angular application
 
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
-```
+## Numeral Pipe
 
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+[NumeralJS](http://numeraljs.com/) is required for the numeral pipe
 
 ```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+$ npm install numeral --save
 ```
 
 ## License
