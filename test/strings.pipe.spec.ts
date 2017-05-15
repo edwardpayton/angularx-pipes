@@ -4,7 +4,7 @@ import {
     SplitPipe, 
     StripTagsPipe, 
     SlugifyPipe 
-} from './strings.pipe';
+} from '../src/pipes/strings.pipe';
 
 describe('TextTransform', () => {
 

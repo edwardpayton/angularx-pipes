@@ -1,25 +1,72 @@
-## Angular Pipes
+# angularx-pipes
 
-A collection of useful, reusable Angular pipes
+## Installation
 
-For Angular 2 and above
+To install this library, run:
 
-https://www.npmjs.com/package/angularx-pipes
-
----
-
-To install 
-
-```
-npm install angularx-pipes
+```bash
+$ npm install angularx-pipes --save
 ```
 
-or
+## Consuming your library
 
+Once you have published your library to npm, you can import your library in any Angular application by running:
+
+```bash
+$ npm install angularx-pipes
 ```
-git clone https://github.com/edwardpayton/angularx-pipes.git angularx-pipes
+
+and then from your Angular `AppModule`:
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import your library
+import { SampleModule } from 'angularx-pipes';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+
+    // Specify your library as an import
+    LibraryModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
----
+Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+```xml
+<!-- You can now use your library component in app.component.html -->
+<h1>
+  {{title}}
+</h1>
+<sampleComponent></sampleComponent>
+```
+
+## Development
+
+To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
+
+```bash
+$ npm run build
+```
+
+To lint all `*.ts` files:
+
+```bash
+$ npm run lint
+```
+
+## License
+
+MIT © [Edward Payton](mailto:edwardjpayton@gmail.com)

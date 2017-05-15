@@ -1,6 +1,4 @@
-import { NumeralPipe } from './numeral.pipe';
-
-import * as numeral from 'numeral';
+import { NumeralPipe } from '../src/pipes/numeral.pipe';
 
 describe('NumeralPipe', () => {
 

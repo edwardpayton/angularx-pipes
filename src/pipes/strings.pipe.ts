@@ -7,12 +7,12 @@ import { isUndefined, isNotString } from './utilities/utilities';
 })
 export class TruncatePipe implements PipeTransform {
 
-  transform(string: string, length?: any, preserve: boolean = false, suffix: string = '...'): string {
-    if(isUndefined(length) || length >= string.length) return string;
+  transform(string: string, length?: any, preserve = false, suffix = '...'): string {
+    if (isUndefined(length) || length >= string.length) { return string; };
 
     // decide if the result should return whole words or break mid-word
-    let resultLength = preserve 
-                            ? (string.indexOf(' ', length) === -1 
+    let resultLength = preserve
+                            ? (string.indexOf(' ', length) === -1
                                 ? string.length
                                 : string.indexOf(' ', length))
                             : length;
@@ -26,17 +26,17 @@ export class TruncatePipe implements PipeTransform {
 })
 export class TrimCharacterPipe implements PipeTransform {
 
-  transform(string: string, char: string = ' '): string {
-    if(!string || isNotString(string)) return;
+  transform(string: string, char = ' '): string {
+    if (!string || isNotString(string)) { return; };
 
     let trimChar = (haystack, needle) => {
       let position = 0;
-      let strLen = string.length -1;
+      let strLen = string.length - 1;
 
-      while(needle.indexOf(haystack[position]) >= 0 && position < strLen) position++;
-      while(needle.indexOf(haystack[strLen]) >= 0 && strLen >= position) strLen--;
+      while (needle.indexOf(haystack[position]) >= 0 && position < strLen) { position++; };
+      while (needle.indexOf(haystack[strLen]) >= 0 && strLen >= position) { strLen--; };
 
-      return haystack.substring(position, strLen +1);
+      return haystack.substring(position, strLen + 1);
     };
 
     return trimChar(string, char);
@@ -48,12 +48,12 @@ export class TrimCharacterPipe implements PipeTransform {
 })
 export class SplitPipe implements PipeTransform {
 
-  transform(string: string, limit?: number, separator: string = ' '): Array<string> {
-    if(!string || isNotString(string)) return;
+  transform(string: string, limit?: number, separator = ' '): Array<string> {
+    if (!string || isNotString(string)) { return; };
 
     let result = string.split(separator, limit);
 
-    return result.filter((v) => v != '');
+    return result.filter((v) => v !== '');
   }
 }
 
@@ -61,27 +61,27 @@ export class SplitPipe implements PipeTransform {
   name: 'stripTags'
 })
 export class StripTagsPipe implements PipeTransform {
-  
+
   transform(string: string): string {
-    if(!string) return;
-    
+    if (!string) { return; };
+
     return string.replace(/<\S[^><]*>/g, '');
   }
 }
 
-@Pipe({ 
-    name: 'slugify' 
+@Pipe({
+    name: 'slugify'
 })
 export class SlugifyPipe implements PipeTransform {
 
   transform(string: string): string {
 
-    if (!string || isNotString(string)) return;
-    
+    if (!string || isNotString(string)) { return; };
+
     return string
             .toLowerCase()
-            .replace(/[^\w ]+/g,'')
+            .replace(/[^\w ]+/g, '')
             .trim()
-            .replace(/ +/g,'-')
+            .replace(/ +/g, '-');
   }
 }

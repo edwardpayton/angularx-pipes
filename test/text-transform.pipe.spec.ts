@@ -1,4 +1,4 @@
-import { FirstUppercasePipe, CapitalisePipe } from './text-transform.pipe';
+import { FirstUppercasePipe, CapitalisePipe } from '../src/pipes/text-transform.pipe';
 
 describe('TextTransform', () => {
 

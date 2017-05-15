@@ -1,4 +1,4 @@
-import { FilterByPipe } from './filter-by.pipe';
+import { FilterByPipe } from '../src/pipes/filter-by.pipe';
 
 describe('FilterByPipe', () => {
 

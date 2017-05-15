@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import * as numeral from 'numeral';
+import numeral from 'numeral';
 
 @Pipe({
   name: 'numeral'
@@ -8,7 +8,7 @@ import * as numeral from 'numeral';
 export class NumeralPipe implements PipeTransform {
 
   transform(value: number, format: string): any {
-    if(!value || isNaN(value)) return;
+    if (!value || isNaN(value)) { return; };
 
     return numeral(value).format(format);
   }

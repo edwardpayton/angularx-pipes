@@ -1,4 +1,4 @@
-import { OrderByPipe } from './order-by.pipe';
+import { OrderByPipe } from '../src/pipes/order-by.pipe';
 
 describe('OrderByPipe', () => {
 
