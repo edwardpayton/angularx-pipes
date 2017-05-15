@@ -4,7 +4,7 @@ A collection of useful, reusable Angular pipes
 
 For Angular 2 and above
 
-https://www.npmjs.com/package/angularx-pipes
+https://www.npmjs.com/package/angularx-pipes  
 https://github.com/edwardpayton/angularx-pipes
 
 ## Installation
