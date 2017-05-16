@@ -85,3 +85,20 @@ export class SlugifyPipe implements PipeTransform {
             .replace(/ +/g, '-');
   }
 }
+
+@Pipe({
+  name: 'obscure'
+})
+export class ObscurePipe implements PipeTransform {
+
+  transform(string: string, show = false): string {
+
+    if (!string || isNotString(string)) { return; };
+
+    let hiddenString = new Array(string.length + 1).join('*');
+
+    return show
+            ? string
+            : hiddenString;
+  }
+}

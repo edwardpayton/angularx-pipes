@@ -28,6 +28,10 @@ function isBoolean(input) {
     return typeof input === 'boolean';
 }
 exports.isBoolean = isBoolean;
+function isObject(value) {
+    return typeof value === 'object';
+}
+exports.isObject = isObject;
 function isNumber(input) {
     return typeof input === 'number';
 }

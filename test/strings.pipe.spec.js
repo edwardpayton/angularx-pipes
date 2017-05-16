@@ -49,4 +49,8 @@ describe('TextTransform', function () {
         expect(pipe.transform("" + longString)).toEqual('a-long-string');
         expect(pipe.transform('String with CAPS & +-/*')).toEqual('string-with-caps');
     });
+    it('should hide the string', function () {
+        var pipe = new strings_pipe_1.ObscurePipe();
+        expect(pipe.transform("" + longString)).toEqual('*************');
+    });
 });

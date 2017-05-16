@@ -3,7 +3,8 @@ import {
     TrimCharacterPipe, 
     SplitPipe, 
     StripTagsPipe, 
-    SlugifyPipe 
+    SlugifyPipe,
+    ObscurePipe
 } from '../src/pipes/strings.pipe';
 
 describe('TextTransform', () => {
@@ -63,6 +64,11 @@ describe('TextTransform', () => {
         const pipe = new SlugifyPipe();
         expect(pipe.transform(`${longString}`)).toEqual('a-long-string');
         expect(pipe.transform('String with CAPS & +-/*')).toEqual('string-with-caps');
+    });
+
+    it('should hide the string', () => {
+        const pipe = new ObscurePipe();
+        expect(pipe.transform(`${longString}`)).toEqual('*************');
     });
 
 });

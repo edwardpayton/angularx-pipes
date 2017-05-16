@@ -26,6 +26,10 @@ export function isBoolean(input: any) {
   return typeof input === 'boolean';
 }
 
+export function isObject(value: any) {
+  return typeof value === 'object';
+}
+
 export function isNumber(input: any) {
   return typeof input === 'number';
 }

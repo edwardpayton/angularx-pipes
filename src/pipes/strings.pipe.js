@@ -126,3 +126,25 @@ SlugifyPipe = __decorate([
     })
 ], SlugifyPipe);
 exports.SlugifyPipe = SlugifyPipe;
+var ObscurePipe = (function () {
+    function ObscurePipe() {
+    }
+    ObscurePipe.prototype.transform = function (string, show) {
+        if (show === void 0) { show = false; }
+        if (!string || utilities_1.isNotString(string)) {
+            return;
+        }
+        ;
+        var hiddenString = new Array(string.length + 1).join('*');
+        return show
+            ? string
+            : hiddenString;
+    };
+    return ObscurePipe;
+}());
+ObscurePipe = __decorate([
+    core_1.Pipe({
+        name: 'obscure'
+    })
+], ObscurePipe);
+exports.ObscurePipe = ObscurePipe;

@@ -53,6 +53,7 @@ Once your library is imported, you can use its pipes in your Angular application
 ## Numeral Pipe
 
 [NumeralJS](http://numeraljs.com/) is required for the numeral pipe
+It is includes in the package, but you can also install in yourself
 
 ```bash
 $ npm install numeral --save
