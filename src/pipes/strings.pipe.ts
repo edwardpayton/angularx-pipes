@@ -22,14 +22,14 @@ export class TruncatePipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'trim-character'
+    name: 'trimCharacter'
 })
 export class TrimCharacterPipe implements PipeTransform {
 
   transform(string: string, char = ' '): string {
-    if (!string || isNotString(string)) { return; };
+    if (!string || isNotString(string)) { return string; };
 
-    let trimChar = (haystack, needle) => {
+    let trimChar = (haystack: string, needle: string) => {
       let position = 0;
       let strLen = string.length - 1;
 
@@ -48,8 +48,8 @@ export class TrimCharacterPipe implements PipeTransform {
 })
 export class SplitPipe implements PipeTransform {
 
-  transform(string: string, limit?: number, separator = ' '): Array<string> {
-    if (!string || isNotString(string)) { return; };
+  transform(string: string, limit?: number, separator = ' '): any {
+    if (!string || isNotString(string)) { return string; };
 
     let result = string.split(separator, limit);
 
@@ -63,7 +63,7 @@ export class SplitPipe implements PipeTransform {
 export class StripTagsPipe implements PipeTransform {
 
   transform(string: string): string {
-    if (!string) { return; };
+    if (!string) { return string; };
 
     return string.replace(/<\S[^><]*>/g, '');
   }
@@ -76,7 +76,7 @@ export class SlugifyPipe implements PipeTransform {
 
   transform(string: string): string {
 
-    if (!string || isNotString(string)) { return; };
+    if (!string || isNotString(string)) { return string; };
 
     return string
             .toLowerCase()
@@ -93,7 +93,7 @@ export class ObscurePipe implements PipeTransform {
 
   transform(string: string, show = false): string {
 
-    if (!string || isNotString(string)) { return; };
+    if (!string || isNotString(string)) { return string; };
 
     let hiddenString = new Array(string.length + 1).join('*');
 

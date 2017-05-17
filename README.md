@@ -31,7 +31,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+// Import the library
 import { AngularxPipes } from 'angularx-pipes';
 
 @NgModule({
@@ -40,7 +40,7 @@ import { AngularxPipes } from 'angularx-pipes';
   ],
   imports: [
     BrowserModule,
-    AngularxPipes
+    AngularxPipes // import the module
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 import { isUndefined, isString, isNull, isObject, isNumber } from './utilities/utilities';
 
 @Pipe({
-  name: 'is-undefined'
+  name: 'isUndefined'
 })
 export class IsUndefined implements PipeTransform {
 
@@ -13,7 +13,7 @@ export class IsUndefined implements PipeTransform {
 }
 
 @Pipe({
-  name: 'is-string'
+  name: 'isString'
 })
 export class IsString implements PipeTransform {
 
@@ -23,7 +23,7 @@ export class IsString implements PipeTransform {
 }
 
 @Pipe({
-  name: 'is-null'
+  name: 'isNull'
 })
 export class IsNull implements PipeTransform {
 
@@ -33,7 +33,7 @@ export class IsNull implements PipeTransform {
 }
 
 @Pipe({
-  name: 'is-object'
+  name: 'isObject'
 })
 export class IsObject implements PipeTransform {
 
@@ -43,7 +43,7 @@ export class IsObject implements PipeTransform {
 }
 
 @Pipe({
-  name: 'is-number'
+  name: 'isNumber'
 })
 export class IsNumber implements PipeTransform {
 
@@ -53,25 +53,21 @@ export class IsNumber implements PipeTransform {
 }
 
 @Pipe({
-  name: 'is-greater-than'
+  name: 'isGreaterThan'
 })
 export class IsGreaterThan implements PipeTransform {
 
   transform(num1: number, num2: number): boolean {
-    if (!isNumber(num1) || !isNumber(num2)) { return; };
-
     return num1 > num2;
   }
 }
 
 @Pipe({
-  name: 'is-less-than'
+  name: 'isLessThan'
 })
 export class IsLessThan implements PipeTransform {
 
   transform(num1: number, num2: number): boolean {
-    if (!isNumber(num1) || !isNumber(num2)) { return; };
-
     return num1 < num2;
   }
 }
