@@ -4,6 +4,8 @@ A collection of useful, reusable Angular pipes
 
 For Angular 2 and above
 
+Supplied in UMD Bundle format through NPM
+
 https://www.npmjs.com/package/angularx-pipes  
 https://github.com/edwardpayton/angularx-pipes
 
@@ -15,9 +17,9 @@ To install this library, run:
 $ npm install angularx-pipes --save
 ```
 
-## Consuming your library
+## Consuming the library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+You can import your library in any Angular application by running:
 
 ```bash
 $ npm install angularx-pipes
