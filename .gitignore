@@ -30,3 +30,7 @@ Desktop.ini
 
 # Build files
 dist/*
+.tmp/*
+
+# Testing
+coverage/*

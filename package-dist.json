@@ -34,9 +34,6 @@
 		"url": "https://github.com/edwardpayton/angularx-pipes.git"
 	},
 	"peerDependencies": {
-		"@angular/common": "^2.4.9",
-		"@angular/core": "^2.4.9",
-		"@types/numeral": "0.0.20",
 		"numeral": "^2.0.6"
 	}
 }
